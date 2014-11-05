@@ -1,0 +1,7 @@
+C:\Users\michael\Documents\Projects\2052_Test\2052_Test\obj\x86\Debug\2052_Test.csprojResolveAssemblyReference.cache
+C:\Users\michael\Documents\Projects\2052_Test\2052_Test\bin\Debug\2052_Test.exe
+C:\Users\michael\Documents\Projects\2052_Test\2052_Test\bin\Debug\2052_Test.pdb
+C:\Users\michael\Documents\Projects\2052_Test\2052_Test\bin\Debug\ui.dll
+C:\Users\michael\Documents\Projects\2052_Test\2052_Test\bin\Debug\ui.pdb
+C:\Users\michael\Documents\Projects\2052_Test\2052_Test\obj\x86\Debug\2052_Test.exe
+C:\Users\michael\Documents\Projects\2052_Test\2052_Test\obj\x86\Debug\2052_Test.pdb

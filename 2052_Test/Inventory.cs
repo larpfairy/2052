@@ -24,9 +24,10 @@ namespace IntroCS
 				if (Player.inventory [input-1].ID > 0 && Player.inventory [input-1].ID <= 100) {
 					Console.Clear ();
 					Console.WriteLine (player1.weapon.name + " has been replaced with " + World.ItemByID (Player.inventory [input-1].ID).name + ".");
-					Player.inventory [input - 1] = player1.weapon;
+					var inventory2 = Player.inventory [input - 1];
+					Player.inventory.Add(player1.weapon);
 					player1.weapon = (Weapon)World.ItemByID (Player.inventory [input-1].ID);
-					Console.WriteLine (player1.weapon.name + " " + player1.weapon.maxDamage);
+					Player.inventory.RemoveAt (input - 1);
 				}
 				if (Player.inventory [input-1].ID > 200 && Player.inventory [input-1].ID <= 300) {
 					Console.Clear ();
@@ -41,9 +42,9 @@ namespace IntroCS
 				if (Player.inventory [input - 1].ID > 100 && Player.inventory [input - 1].ID <= 200) {
 					Console.Clear ();
 					Console.WriteLine (player1.armor.name + " has been replaced with " + World.ItemByID (Player.inventory [input - 1].ID).name + ".");
-					Player.inventory [input - 1] = player1.armor;
+					Player.inventory.Add(player1.armor);
 					player1.armor = (Armor)World.ItemByID (Player.inventory [input - 1].ID);
-					Console.WriteLine (player1.armor.name + " " + player1.armor.armorClass);
+					Player.inventory.RemoveAt (input - 1);
 				}
 
 			}

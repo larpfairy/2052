@@ -29,7 +29,7 @@ namespace IntroCS
 					player1.weapon = (Weapon)World.ItemByID (Player.inventory [input-1].ID);
 					Player.inventory.RemoveAt (input - 1);
 				}
-				if (Player.inventory [input-1].ID > 200 && Player.inventory [input-1].ID <= 300) {
+				else if (Player.inventory [input-1].ID > 200 && Player.inventory [input-1].ID <= 300) {
 					Console.Clear ();
 					player1.salve = (Salve)World.ItemByID (Player.inventory [input-1].ID);
 					player1.currentHealth += player1.salve.healingvalue;
@@ -39,7 +39,7 @@ namespace IntroCS
 					Console.WriteLine ("You have used the " + Player.inventory [input-1].name + " to heal " + player1.salve.healingvalue + " health!");
 					Player.inventory.RemoveAt (input-1);
 				}
-				if (Player.inventory [input - 1].ID > 100 && Player.inventory [input - 1].ID <= 200) {
+				else if (Player.inventory [input - 1].ID >= 101 && Player.inventory [input - 1].ID <= 200) {
 					Console.Clear ();
 					Console.WriteLine (player1.armor.name + " has been replaced with " + World.ItemByID (Player.inventory [input - 1].ID).name + ".");
 					Player.inventory.Add(player1.armor);

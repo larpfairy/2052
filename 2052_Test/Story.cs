@@ -18,7 +18,7 @@ namespace IntroCS
 				input = input.ToUpper ();
 				if (input == "CHEST") {
 					Console.Clear ();
-					Container.StartingChest (player1);
+					Container.BasicChest (player1);
 				} else if (input == "DOOR") {
 					i++;
 					player1.progress++;

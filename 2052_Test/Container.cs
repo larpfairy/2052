@@ -45,6 +45,33 @@ namespace IntroCS
 			}
 
 		}
+		public static void BasicChest(Player player1)
+		{
+			Console.Clear ();
+
+			chestList = new List<Item> ();
+
+			chestList.Add (World.ItemByID (201));
+
+			int j = 0;
+			while(j == 0)
+			{
+				for (int i = 0; i < chestList.Count; i++) {
+					Console.WriteLine ((i + 1) + ". " + chestList [i].name);
+				}
+
+				int input = UI.PromptIntInRange ("Please enter the number of an item you want to take. Enter 0 to leave.", 0, chestList.Count);
+				if (input == 0) {
+					j++;
+				} 
+				else if (input != 0) {
+					GetItem (player1, input, chestList);
+					for (int i = 0; i < chestList.Count; i++) {
+						Console.WriteLine ((i + 1) + ". " + chestList [i].name);
+					}
+				}
+			}
+		}
 		public static void GetItem(Player player1, int input, List<Item> chestList)
 		{
 			Player.inventory.Add (chestList [input-1]);
@@ -52,6 +79,7 @@ namespace IntroCS
 			Console.WriteLine (chestList [input-1].name + " has been added to your inventory.");
 			chestList.RemoveAt (input-1);
 		}
+
 	}
 }
 

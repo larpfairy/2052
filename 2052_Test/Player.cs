@@ -17,13 +17,17 @@ namespace IntroCS
 		public string playerClass { get; set;}
 		public int level { get; set;}
 		public Weapon weapon { get; set; }
+		public Armor armor { get; set; }
 		public Salve salve { get; set; }
+		public int progress { get; set;}
 
 
 		public Player()
 		{
 			inventory = new List<Item>();
 			weapon = (Weapon)World.ItemByID (4);
+			armor = (Armor)World.ItemByID (104);
+			progress = 1;
 		}
 		public static string GetName()
 		{
@@ -87,6 +91,33 @@ namespace IntroCS
 				}
 			}
 			return att;
+		}
+		public static void PlayerSummary (Player player1)
+		{
+			Console.WriteLine ("Name: " + player1.name);
+			Console.WriteLine ("Class: " + player1.playerClass);
+			Console.WriteLine ("Level: " + player1.level);
+			Console.WriteLine ("Strength: " + player1.STR);
+			Console.WriteLine ("Dexterity: " + player1.DEX);
+			Console.WriteLine ("Intelligence: " + player1.INT);
+			Console.WriteLine ("Constitution: " + player1.CON);
+			Console.WriteLine ("Health: " + player1.maximumHealth);
+			Console.WriteLine ("Experience: " + player1.experience);
+			Console.WriteLine ("Weapon: " + player1.weapon.name);
+			Console.WriteLine ("Armor: " + player1.armor.name);
+			Console.WriteLine ("Inventory: ");
+			if (Player.inventory.Count > 1) {
+				for (int i = 0; i < Player.inventory.Count; i++) {
+					Console.WriteLine ("\t\t" + Player.inventory [i].name);
+				}
+			} else if (Player.inventory.Count < 1) {
+				Console.WriteLine ("empty");
+			}
+			Console.WriteLine ("Press enter to continue...");
+			Console.ReadLine ();
+			Console.Clear ();
+
+
 		}
 	}
 }

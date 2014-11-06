@@ -9,6 +9,7 @@ namespace IntroCS
 
 		public static void StartingChest(Player player1)
 		{
+			Console.Clear ();
 			chestList = new List<Item> ();
 			if (player1.playerClass == "Scientist") {
 				chestList.Add (World.ItemByID (201));

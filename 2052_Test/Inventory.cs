@@ -22,12 +22,14 @@ namespace IntroCS
 				}
 
 				if (Player.inventory [input-1].ID > 0 && Player.inventory [input-1].ID <= 100) {
-					Console.WriteLine (player1.weapon.name + "has been replaced with " + World.ItemByID (Player.inventory [input-1].ID).name + ".");
+					Console.Clear ();
+					Console.WriteLine (player1.weapon.name + " has been replaced with " + World.ItemByID (Player.inventory [input-1].ID).name + ".");
 					Player.inventory [input - 1] = player1.weapon;
 					player1.weapon = (Weapon)World.ItemByID (Player.inventory [input-1].ID);
 					Console.WriteLine (player1.weapon.name + " " + player1.weapon.maxDamage);
 				}
 				if (Player.inventory [input-1].ID > 200 && Player.inventory [input-1].ID <= 300) {
+					Console.Clear ();
 					player1.salve = (Salve)World.ItemByID (Player.inventory [input-1].ID);
 					player1.currentHealth += player1.salve.healingvalue;
 					if (player1.currentHealth > player1.maximumHealth) {
@@ -35,6 +37,13 @@ namespace IntroCS
 					}
 					Console.WriteLine ("You have used the " + Player.inventory [input-1].name + " to heal " + player1.salve.healingvalue + " health!");
 					Player.inventory.RemoveAt (input-1);
+				}
+				if (Player.inventory [input - 1].ID > 100 && Player.inventory [input - 1].ID <= 200) {
+					Console.Clear ();
+					Console.WriteLine (player1.armor.name + " has been replaced with " + World.ItemByID (Player.inventory [input - 1].ID).name + ".");
+					Player.inventory [input - 1] = player1.armor;
+					player1.armor = (Armor)World.ItemByID (Player.inventory [input - 1].ID);
+					Console.WriteLine (player1.armor.name + " " + player1.armor.armorClass);
 				}
 
 			}

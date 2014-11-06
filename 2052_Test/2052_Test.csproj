@@ -45,6 +45,8 @@
     <Compile Include="Story.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Container.cs" />
+    <Compile Include="Save.cs" />
+    <Compile Include="Load.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

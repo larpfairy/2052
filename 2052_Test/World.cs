@@ -17,13 +17,14 @@ namespace IntroCS
 		public const int lab_coat = 101;
 		public const int fighter_regalia = 102;
 		public const int unimpressionable_clothing = 103;
+		public const int kakis_and_tshirt = 104;
 		//salves 201-300
 		public const int medi_gel = 201;
 
-		//enemies
-		public const int raider = 1;
-		public const int raider_commander = 2;
-		public const int giant_rat = 3;
+		//enemies 301 -400
+		public const int raider = 301;
+		public const int raider_commander = 302;
+		public const int giant_rat = 303;
 
 		static World ()
 		{
@@ -39,6 +40,7 @@ namespace IntroCS
 			Items.Add (new Armor (lab_coat, "Lab Coat", 10));
 			Items.Add (new Armor (fighter_regalia, "Fighter Regalia", 10));
 			Items.Add (new Armor (unimpressionable_clothing, "Unimpressionable Clothing", 10));
+			Items.Add (new Armor (kakis_and_tshirt, "Kakis and t-shirt", 0));
 			Items.Add (new Salve (medi_gel, "Medi-Gel", 10));
 		}
 		private static void PopulateEnemies()

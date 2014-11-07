@@ -6,7 +6,7 @@ namespace IntroCS
 	{
 		public int healingvalue;
 
-		public Salve (int id, string name, int HealingValue):base(id,name)
+		public Salve (int id, string name, int Value, int HealingValue):base(id,name,Value)
 		{
 			healingvalue = HealingValue;
 		}

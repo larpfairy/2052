@@ -6,11 +6,13 @@ namespace IntroCS
 	{
 		public string name { get; set; }
 		public int ID { get; set; }
+		public int value { get; set; }
 
-		public Item (int id, string Name)
+		public Item (int id, string Name, int Value)
 		{
 			name = Name;
 			ID = id;
+			value = Value;
 		}
 	}
 }

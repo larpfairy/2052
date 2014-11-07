@@ -18,6 +18,8 @@ namespace IntroCS
 		public int level { get; set;}
 		public Weapon weapon { get; set; }
 		public Armor armor { get; set; }
+		public int willpower { get; set; }
+		public int initiative { get; set; }
 		public Salve salve { get; set; }
 		public int progress { get; set;}
 
@@ -28,6 +30,7 @@ namespace IntroCS
 			weapon = (Weapon)World.ItemByID (4);
 			armor = (Armor)World.ItemByID (104);
 			progress = 1;
+			initiative = 10;
 		}
 		public static string GetName()
 		{

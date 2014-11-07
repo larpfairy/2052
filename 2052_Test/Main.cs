@@ -20,9 +20,11 @@ namespace IntroCS
 				player1.DEX = Player.GetAttribute (player1.playerClass, "DEX");
 				player1.INT = Player.GetAttribute (player1.playerClass, "INT");
 				player1.CON = Player.GetAttribute (player1.playerClass, "CON");
+				player1.willpower = 10 + player1.INT / 4;
 				player1.level = 1;
 				player1.experience = 0;
 				player1.salve = (Salve)World.ItemByID (201);
+
 			}
 			if (x == true) {
 				Load.LoadGame (player1);

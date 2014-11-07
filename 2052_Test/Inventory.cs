@@ -11,13 +11,27 @@ namespace IntroCS
 			while (i == 0) {
 				int j = 0;
 				foreach (Item item in Player.inventory) {
-					Console.WriteLine ((j+1) + ". " + item.name);
+					Console.WriteLine ((j + 1) + ". " + item.name);
+					Console.WriteLine("\tValue: " + item.value);
+					if (item.ID > 0 && item.ID <= 100) {
+						Weapon weapon;
+						weapon = (Weapon)World.ItemByID (item.ID);
+						Console.WriteLine ("\tMax Damage: " + weapon.maxDamage);
+						Console.WriteLine ("\tMin Damage: " + weapon.minDamage);
+						Console.WriteLine ("\tType: " + weapon.Type);
+					} else if (item.ID > 200 && item.ID <= 300) {
+						Salve salve;
+						salve = (Salve)World.ItemByID (item.ID);
+						Console.WriteLine ("\tHealing Power: " + salve.healingvalue);
+					}
+					Console.WriteLine ();
 					j++;
 				}
 				int input = UI.PromptIntInRange ("Please enter the number of an item. Enter 0 to exit.", 0, Player.inventory.Count);
 
 				if (input == 0) {
 					i++;
+					Console.Clear ();
 					return;
 				}
 

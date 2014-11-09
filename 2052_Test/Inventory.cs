@@ -12,7 +12,7 @@ namespace IntroCS
 				int j = 0;
 				foreach (Item item in Player.inventory) {
 					Console.WriteLine ((j + 1) + ". " + item.name);
-					Console.WriteLine("\tValue: " + item.value);
+					Console.WriteLine("\tSell Value: " + item.value);
 					if (item.ID > 0 && item.ID <= 100) {
 						Weapon weapon;
 						weapon = (Weapon)World.ItemByID (item.ID);

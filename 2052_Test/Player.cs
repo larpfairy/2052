@@ -22,6 +22,7 @@ namespace IntroCS
 		public int initiative { get; set; }
 		public Salve salve { get; set; }
 		public int progress { get; set;}
+		public int Value { get; set; }
 
 
 		public Player()
@@ -30,7 +31,8 @@ namespace IntroCS
 			weapon = (Weapon)World.ItemByID (4);
 			armor = (Armor)World.ItemByID (104);
 			progress = 1;
-			initiative = 10;
+			initiative = 10 + (DEX/4);
+			Value = 0;
 		}
 		public static string GetName()
 		{

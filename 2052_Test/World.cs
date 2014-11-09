@@ -64,8 +64,8 @@ namespace IntroCS
 		}
 		private static void PopulateEnemies()
 		{
-			Enemies.Add (new Enemy (raider, 1, 10, "Raider", 5, 10, 5, 15, 10, 10, 10));
-			Enemies.Add (new Enemy (raider_commander, 1, 15, "Raider Commander", 6, 10, 7, 16, 15, 10, 20));
+			Enemies.Add (new Enemy (raider, 1, 10, "Raider", 5, 10, 5, "Laser Pistol", "STR",15, 10, 10, 10, 10));
+			Enemies.Add (new Enemy (raider_commander, 1, 15, "Raider Commander", 6, 10, 7, "Plasma Rifle", "STR", 16, 15, 10, 20, 10));
 		}
 		private static void PopulateContainers()
 		{

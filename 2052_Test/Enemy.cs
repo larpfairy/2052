@@ -10,14 +10,17 @@ namespace IntroCS
 		public string name { get; set; }
 		public int weaponMax { get; set; }
 		public int weaponMin{ get; set; }
+		public string weaponName { get; set; }
+		public string weaponType{ get; set; }
 		public int ID { get; set; }
 		public int initiative { get; set; }
 		public int experience { get; set; }
 		public int attackModifier { get; set; }
 		public int armorClass { get; set; }
 		public int willPower { get; set; }
+		public int Value { get; set; }
 
-		public Enemy (int id, int Level, int Health, string Name, int attackmodifier, int weaponmax, int weaponmin, int armorclass, int willpower, int Initiative, int Experience)
+		public Enemy (int id, int Level, int Health, string Name, int attackmodifier, int weaponmax, int weaponmin, string weaponname, string weapontype, int armorclass, int willpower, int Initiative, int Experience, int value)
 		{
 			ID = id;
 			level = Level;
@@ -30,9 +33,12 @@ namespace IntroCS
 			initiative = Initiative;
 			experience = Experience;
 			willPower = willpower;
+			weaponName = weaponname;
+			weaponType = weapontype;
+			Value = value;
 
 		}
-		public Enemy GetRandomEnemyByLevel (Player player1)
+		public static Enemy GetRandomEnemyByLevel (Player player1)
 		{
 			var enemylist = new List<Enemy> ();
 			for (int i = 0; i < World.Enemies.Count; i++) {
@@ -42,6 +48,19 @@ namespace IntroCS
 			}
 			Random random = new Random ();
 			return enemylist [random.Next (0, enemylist.Count)];
+		}
+
+		public static void Loot(Player player1, Enemy enemy)
+		{
+			Console.Clear ();
+			Console.WriteLine ("You killed the " + enemy.name + "!");
+			player1.experience += enemy.experience;
+			Console.WriteLine ("You gain " + enemy.experience + " experience!");
+			Console.WriteLine ("You find " + enemy.Value + " credits on the " + enemy.name + ".");
+			player1.Value += enemy.Value;
+
+			Console.WriteLine ("Press enter to continue...");
+			Console.ReadLine ();
 		}
 	}
 }

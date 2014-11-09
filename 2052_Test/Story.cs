@@ -26,6 +26,7 @@ namespace IntroCS
 						Container.DoContainer (player1, World.ContainerByID (403));
 					}
 				} else if (input == "DOOR") {
+					Combat.DoCombat (player1, Enemy.GetRandomEnemyByLevel (player1));
 					i++;
 					player1.progress++;
 					Save.SaveGame (player1);

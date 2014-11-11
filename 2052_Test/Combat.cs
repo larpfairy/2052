@@ -30,6 +30,7 @@ namespace IntroCS
 			int playerinitiative = playerd20 + player1.initiative;
 			int enemyinitiative = enemyd20 + enemy.initiative;
 
+			Console.Clear ();
 			Console.WriteLine ("Combat Encounter!!");
 			Console.WriteLine ("An enemy " + enemy.name + " has appeared!");
 
@@ -83,6 +84,8 @@ namespace IntroCS
 			Console.WriteLine ("ATTACK");
 			Console.WriteLine ("DEFEND");
 			Console.WriteLine ("INVENTORY");
+			Console.WriteLine ("AC" + player1.armor.armorClass);
+			Console.WriteLine ("AC and defend bonus: " + (player1.armor.armorClass + combat.defend));
 			string input = UI.PromptLine ("What would you like to do?");
 			input = input.ToUpper ();
 
@@ -140,10 +143,11 @@ namespace IntroCS
 					}
 				}
 
-			} else if (input == "Defend") {
-				combat.defend += 4/combat.defendcounter;
+			} else if (input == "DEFEND") {
+				combat.defend += (4/combat.defendcounter);
 				Console.WriteLine ("Your defense has been raised!");
 				combat.defendcounter++;
+				Console.ReadLine ();
 			} else if (input == "INVENTORY") {
 				Inventory.DoInventory (player1);
 			} 

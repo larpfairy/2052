@@ -27,15 +27,20 @@ namespace IntroCS
 					Console.WriteLine ();
 					j++;
 				}
-				int input = UI.PromptIntInRange ("Please enter the number of an item. Enter 0 to exit.", 0, Player.inventory.Count);
+				int input = UI.PromptIntInRange ("Please enter the number of an item. Enter 0 to exit, -1 to drop", -1, Player.inventory.Count);
 
 				if (input == 0) {
 					i++;
 					Console.Clear ();
 					return;
 				}
-
-				if (Player.inventory [input-1].ID > 0 && Player.inventory [input-1].ID <= 100) {
+				else if (input == -1) {
+					int drop = UI.PromptIntInRange ("Please enter the number of an item you want to drop", 1, Player.inventory.Count);
+					Console.Clear ();
+					Console.WriteLine (World.ItemByID (Player.inventory [drop - 1].ID).name + " has been dropped.");
+					Player.inventory.RemoveAt (drop - 1);
+				}
+				else if (Player.inventory [input-1].ID > 0 && Player.inventory [input-1].ID <= 100) {
 					Console.Clear ();
 					Console.WriteLine (player1.weapon.name + " has been replaced with " + World.ItemByID (Player.inventory [input-1].ID).name + ".");
 					var inventory2 = Player.inventory [input - 1];

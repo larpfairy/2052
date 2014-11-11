@@ -1,0 +1,10 @@
+sequence2
+this is a story. I really like this story so far, its so great!
+~
+There is a DOOR to the north.
+~
+sequence3
+Woot
+~
+DOOR
+~

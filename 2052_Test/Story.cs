@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace IntroCS
 {
@@ -43,6 +45,72 @@ namespace IntroCS
 			}
 
 			
+		}
+		public static void Sequence2 (Player player1)
+		{
+			var reader = new StreamReader ("Story.txt");
+
+			string[] storyArray = GetStory (reader, "sequence2");
+
+			Console.WriteLine (storyArray [0]);
+
+			int i = 0;
+			string input = "";
+			while (i == 0) {
+				Console.WriteLine (storyArray[1]);
+				Console.WriteLine ("What would you like to do?");
+				Console.WriteLine ("INVENTORY || SAVE || STATUS");
+				input = Console.ReadLine ();
+				input = input.ToUpper ();
+				if (input == "") {
+					Console.Clear ();
+
+				} else if (input == "DOOR") {
+
+					i++;
+					player1.progress++;
+					Save.SaveGame (player1);
+				} else if (input == "INVENTORY") {
+					Console.Clear ();
+					Inventory.DoInventory (player1);
+				} else if (input == "SAVE") {
+					Console.Clear ();
+					Save.SaveGame (player1);
+				} else if (input == "STATUS") {
+					Console.Clear ();
+					Player.PlayerSummary (player1);
+				}
+			}
+		}
+		public static string[] GetStory(StreamReader reader, string sequence)
+		{
+			string[] array = new string[2];
+
+			while (!reader.EndOfStream) {
+				string x = reader.ReadLine ();
+				if (x == sequence) {
+					int i = 0;
+					while (i == 0) {
+						string y = reader.ReadLine ();
+						if (y == "~") {
+							int j = 0;
+							while (j == 0) {
+								string z = reader.ReadLine ();
+								if (z == "~") {
+									j++;
+									i++;
+								} else {
+									array [1] += z;
+								}
+							}
+						} 
+						else {
+							array [0] += y;
+						}
+					}
+				}
+			}
+			return array;
 		}
 	}
 }

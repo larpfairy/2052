@@ -42,6 +42,9 @@ namespace IntroCS
 			if (player1.progress <= 1) {
 				Story.Sequence1 (player1);
 			}
+			if (player1.progress == 2) {
+				Story.Sequence2 (player1);
+			}
 
 
 

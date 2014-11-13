@@ -31,6 +31,7 @@ namespace IntroCS
 		public const int raider = 301;
 		public const int raider_commander = 302;
 		public const int giant_rat = 303;
+		public const int mech = 304;
 
 		//containers 401 -500
 		public const int scientist_chest = 401;
@@ -65,7 +66,8 @@ namespace IntroCS
 		private static void PopulateEnemies()
 		{
 			Enemies.Add (new Enemy (raider, 1, 10, "Raider", 5, 10, 5, "Laser Pistol", "STR",15, 10, 10, 10, 10));
-			Enemies.Add (new Enemy (raider_commander, 1, 15, "Raider Commander", 6, 10, 7, "Plasma Rifle", "STR", 16, 15, 10, 20, 10));
+			Enemies.Add (new Enemy (raider_commander, 2, 15, "Raider Commander", 6, 10, 7, "Plasma Rifle", "STR", 16, 15, 10, 20, 10));
+			Enemies.Add (new Enemy (mech, 1, 10, "Mech", 2, 4, 2, "Minigun", "DEX", 10, 10, 5, 10, 10));
 		}
 		private static void PopulateContainers()
 		{

@@ -44,15 +44,19 @@ namespace IntroCS
 					x = Check (player1, enemy);
 					if (x == "TRUE") {
 						Enemy.Loot (player1, enemy);
+						Console.Clear ();
 						i++;
 					}
-					Combat.EnemyCombat (player1, enemy, combat);
-					x = Check (player1, enemy);
-					if (x == "FALSE") {
-						Combat.GameOver (player1);
-					} else if (x == "TRUE") {
-						Enemy.Loot (player1, enemy);
-						i++;
+					if (enemy.health > 0) {
+						Combat.EnemyCombat (player1, enemy, combat);
+						x = Check (player1, enemy);
+						if (x == "FALSE") {
+							Combat.GameOver (player1);
+						} else if (x == "TRUE") {
+							Enemy.Loot (player1, enemy);
+							Console.Clear ();
+							i++;
+						}
 					}
 
 				} 
@@ -66,6 +70,7 @@ namespace IntroCS
 					x = Combat.Check (player1, enemy);
 					if (x == "TRUE") {
 						Enemy.Loot (player1, enemy);
+						Console.Clear ();
 						i++;
 					}
 				}
@@ -78,79 +83,89 @@ namespace IntroCS
 			int playerd20;
 
 			Random random = new Random ();
+			int j = 0;
+			while (j == 0) {
+				Combat.CombatStats (player1, enemy);
 
-			Combat.CombatStats (player1, enemy);
+				Console.WriteLine ("ATTACK");
+				Console.WriteLine ("DEFEND");
+				Console.WriteLine ("INVENTORY");
+				Console.WriteLine ("AC" + player1.armor.armorClass);
+				Console.WriteLine ("AC and defend bonus: " + (player1.armor.armorClass + combat.defend));
+				string input = UI.PromptLine ("What would you like to do?");
+				input = input.ToUpper ();
 
-			Console.WriteLine ("ATTACK");
-			Console.WriteLine ("DEFEND");
-			Console.WriteLine ("INVENTORY");
-			Console.WriteLine ("AC" + player1.armor.armorClass);
-			Console.WriteLine ("AC and defend bonus: " + (player1.armor.armorClass + combat.defend));
-			string input = UI.PromptLine ("What would you like to do?");
-			input = input.ToUpper ();
+				if (input == "ATTACK") {
+					j++;
+					if (player1.weapon.Type == "STR") {
+						playerd20 = random.Next (1, 21);
+						int playerattack = playerd20 + (player1.STR / 4);
 
-			if (input == "ATTACK") {
-				if (player1.weapon.Type == "STR") {
-					playerd20 = random.Next (1, 21);
-					int playerattack = playerd20 + (player1.STR / 4);
+						if (playerattack >= enemy.armorClass) {
+							Console.Clear ();
+							Console.WriteLine ("You hit the enemy with your " + player1.weapon.name + "!");
+							int damage = random.Next (player1.weapon.minDamage, player1.weapon.maxDamage + 1);
+							enemy.health -= damage + (player1.STR / 4);
+							Console.WriteLine ("It does " + (damage + (player1.STR / 4)) + " damage!");
+							Console.ReadLine ();
+						} else if (playerattack < enemy.armorClass) {
+							Console.Clear ();
+							Console.WriteLine ("Your attack missed :(");
+							Console.ReadLine ();
+						}
 
-					if (playerattack >= enemy.armorClass) {
-						Console.Clear ();
-						Console.WriteLine ("You hit the enemy with your " + player1.weapon.name + "!");
-						int damage = random.Next (player1.weapon.minDamage, player1.weapon.maxDamage + 1);
-						enemy.health -= damage + (player1.STR / 4);
-						Console.WriteLine ("It does " + (damage + (player1.STR/4)) + " damage!");
-						Console.ReadLine ();
-					} else if (playerattack < enemy.armorClass) {
-						Console.Clear ();
-						Console.WriteLine ("Your attack missed :(");
-						Console.ReadLine ();
+					}
+					if (player1.weapon.Type == "DEX") {
+						playerd20 = random.Next (1, 21);
+						int playerattack = playerd20 + (player1.DEX / 4);
+
+						if (playerattack >= enemy.armorClass) {
+							Console.Clear ();
+							Console.WriteLine ("You hit the enemy with your " + player1.weapon.name + "!");
+							int damage = random.Next (player1.weapon.minDamage, player1.weapon.maxDamage + 1);
+							enemy.health -= damage + (player1.DEX / 4);
+							Console.WriteLine ("It does " + (damage + (player1.DEX / 4)) + " damage!");
+							Console.ReadLine ();
+						} else if (playerattack < enemy.armorClass) {
+							Console.Clear ();
+							Console.WriteLine ("Your attack missed :(");
+							Console.ReadLine ();
+						}
+					}
+					if (player1.weapon.Type == "INT") {
+						playerd20 = random.Next (1, 21);
+						int playerattack = playerd20 + (player1.INT / 4);
+
+						if (playerattack >= enemy.willPower) {
+							Console.Clear ();
+							Console.WriteLine ("You hit the enemy with your " + player1.weapon.name + "!");
+							int damage = random.Next (player1.weapon.minDamage, player1.weapon.maxDamage + 1);
+							enemy.health -= (damage + (player1.INT / 4));
+							Console.WriteLine ("It does " + (damage + (player1.INT / 4)) + " damage!");
+							Console.ReadLine ();
+						} else if (playerattack < enemy.willPower) {
+							Console.Clear ();
+							Console.WriteLine ("Your attack was negated :(");
+							Console.ReadLine ();
+						}
 					}
 
+				} else if (input == "DEFEND") {
+					j++;
+					combat.defend += (4 / combat.defendcounter);
+					Console.WriteLine ("Your defense has been raised!");
+					combat.defendcounter++;
+					Console.ReadLine ();
+				} else if (input == "INVENTORY") {
+					j++;
+					Inventory.DoInventory (player1);
+				} else {
+					Console.Clear ();
+					Console.WriteLine ("I can't understand you");
+					Console.ReadLine ();
+					Console.Clear ();
 				}
-				if (player1.weapon.Type == "DEX") {
-					playerd20 = random.Next (1, 21);
-					int playerattack = playerd20 + (player1.DEX / 4);
-
-					if (playerattack >= enemy.armorClass) {
-						Console.Clear ();
-						Console.WriteLine ("You hit the enemy with your " + player1.weapon.name + "!");
-						int damage = random.Next (player1.weapon.minDamage, player1.weapon.maxDamage + 1);
-						enemy.health -= damage + (player1.DEX / 4);
-						Console.WriteLine ("It does " + (damage + (player1.DEX/4)) + " damage!");
-						Console.ReadLine ();
-					} else if (playerattack < enemy.armorClass) {
-						Console.Clear ();
-						Console.WriteLine ("Your attack missed :(");
-						Console.ReadLine ();
-					}
-				}
-				if (player1.weapon.Type == "INT") {
-					playerd20 = random.Next (1, 21);
-					int playerattack = playerd20 + (player1.INT / 4);
-
-					if (playerattack >= enemy.willPower) {
-						Console.Clear ();
-						Console.WriteLine ("You hit the enemy with your " + player1.weapon.name + "!");
-						int damage = random.Next (player1.weapon.minDamage, player1.weapon.maxDamage + 1);
-						enemy.health -= (damage + (player1.INT / 4));
-						Console.WriteLine ("It does " + (damage + (player1.INT/4)) + " damage!");
-						Console.ReadLine ();
-					} else if (playerattack < enemy.willPower) {
-						Console.Clear ();
-						Console.WriteLine ("Your attack was negated :(");
-						Console.ReadLine ();
-					}
-				}
-
-			} else if (input == "DEFEND") {
-				combat.defend += (4/combat.defendcounter);
-				Console.WriteLine ("Your defense has been raised!");
-				combat.defendcounter++;
-				Console.ReadLine ();
-			} else if (input == "INVENTORY") {
-				Inventory.DoInventory (player1);
-			} 
+			}
 		}
 
 

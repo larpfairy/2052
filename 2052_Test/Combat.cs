@@ -46,7 +46,6 @@ namespace IntroCS
 						x = Check (player1, enemy);
 						if (x == "TRUE") {
 							Enemy.Loot (player1, enemy);
-							enemy.health = enemy.maxhealth;
 							Console.Clear ();
 							i++;
 
@@ -59,7 +58,6 @@ namespace IntroCS
 							Combat.GameOver (player1);
 						} else if (x == "TRUE") {
 							Enemy.Loot (player1, enemy);
-							enemy.health = enemy.maxhealth;
 							Console.Clear ();
 							i++;
 						}
@@ -78,12 +76,12 @@ namespace IntroCS
 					x = Combat.Check (player1, enemy);
 					if (x == "TRUE") {
 						Enemy.Loot (player1, enemy);
-						enemy.health = enemy.maxhealth;
 						Console.Clear ();
 						i++;
 					}
 				}
 			}
+			enemy.health = enemy.maxhealth;
 		}
 
 		public static void PlayerCombat(Player player1, Enemy enemy, Combat combat)

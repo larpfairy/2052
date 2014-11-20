@@ -1,10 +1,11 @@
+sequence1
+Initializing stasis defragmentation...
+Welcome back, you have been in stasis for some time. Please proceed to  
+~
+There is a CHEST in the corner, there is a DOOR to the North. You hear what sounds like fighting coming from beyond the door.
+~
 sequence2
-this is a story. I really like this story so far, its so great!
+You make your way down the hallway towards a large circular room. Computers line the walls of this room.
 ~
-There is a DOOR to the north.
-~
-sequence3
-Woot
-~
-DOOR
+There is a GUARD at one of the computers, there is a DOCUMENT on a desk, there is a HALLWAY to your left, there is a DOOR to your right.
 ~

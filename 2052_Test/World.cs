@@ -38,6 +38,9 @@ namespace IntroCS
 		public const int brawler_chest = 402;
 		public const int sniper_chest = 403;
 
+		//documents 501=600
+		public const int computer_room_document = 501;
+
 		static World ()
 		{
 			PopulateItems ();
@@ -62,12 +65,13 @@ namespace IntroCS
 			Items.Add (new Armor (unimpressionable_clothing, "Unimpressionable Clothing", 5, 10, "Light"));
 			Items.Add (new Armor (kakis_and_tshirt, "Kakis and t-shirt", 5, 0, "Light"));
 			Items.Add (new Salve (medi_gel, "Medi-Gel", 10, 10));
+			Items.Add (new Document (computer_room_document, "singularity document", 0, Document.GetContent ("singularity_document")));
 		}
 		private static void PopulateEnemies()
 		{
-			Enemies.Add (new Enemy (raider, 1, 10, "Raider", 5, 10, 5, "Laser Pistol", "STR",15, 10, 10, 10, 10));
-			Enemies.Add (new Enemy (raider_commander, 2, 15, "Raider Commander", 6, 10, 7, "Plasma Rifle", "STR", 16, 15, 10, 20, 10));
-			Enemies.Add (new Enemy (mech, 1, 10, "Mech", 2, 4, 2, "Minigun", "DEX", 10, 10, 5, 10, 10));
+			Enemies.Add (new Enemy (raider, 1, 10, 10, "Raider", 5, 10, 5, "Laser Pistol", "STR",15, 10, 10, 10, 10));
+			Enemies.Add (new Enemy (raider_commander, 2, 15, 15,"Raider Commander", 6, 10, 7, "Plasma Rifle", "STR", 16, 15, 10, 20, 10));
+			Enemies.Add (new Enemy (mech, 1, 10, 10, "Mech", 2, 4, 2, "Minigun", "DEX", 10, 10, 5, 10, 10));
 		}
 		private static void PopulateContainers()
 		{

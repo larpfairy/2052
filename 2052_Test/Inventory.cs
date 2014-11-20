@@ -33,37 +33,39 @@ namespace IntroCS
 					i++;
 					Console.Clear ();
 					return;
-				}
-				else if (input == -1) {
+				} else if (input == -1) {
 					int drop = UI.PromptIntInRange ("Please enter the number of an item you want to drop", 1, Player.inventory.Count);
 					Console.Clear ();
 					Console.WriteLine (World.ItemByID (Player.inventory [drop - 1].ID).name + " has been dropped.");
 					Player.inventory.RemoveAt (drop - 1);
-				}
-				else if (Player.inventory [input-1].ID > 0 && Player.inventory [input-1].ID <= 100) {
+				} else if (Player.inventory [input - 1].ID > 0 && Player.inventory [input - 1].ID <= 100) {
 					Console.Clear ();
-					Console.WriteLine (player1.weapon.name + " has been replaced with " + World.ItemByID (Player.inventory [input-1].ID).name + ".");
+					Console.WriteLine (player1.weapon.name + " has been replaced with " + World.ItemByID (Player.inventory [input - 1].ID).name + ".");
 					var inventory2 = Player.inventory [input - 1];
-					Player.inventory.Add(player1.weapon);
-					player1.weapon = (Weapon)World.ItemByID (Player.inventory [input-1].ID);
+					Player.inventory.Add (player1.weapon);
+					player1.weapon = (Weapon)World.ItemByID (Player.inventory [input - 1].ID);
 					Player.inventory.RemoveAt (input - 1);
-				}
-				else if (Player.inventory [input-1].ID > 200 && Player.inventory [input-1].ID <= 300) {
+				} else if (Player.inventory [input - 1].ID > 200 && Player.inventory [input - 1].ID <= 300) {
 					Console.Clear ();
-					player1.salve = (Salve)World.ItemByID (Player.inventory [input-1].ID);
+					player1.salve = (Salve)World.ItemByID (Player.inventory [input - 1].ID);
 					player1.currentHealth += player1.salve.healingvalue;
 					if (player1.currentHealth > player1.maximumHealth) {
 						player1.currentHealth = player1.maximumHealth;
 					}
-					Console.WriteLine ("You have used the " + Player.inventory [input-1].name + " to heal " + player1.salve.healingvalue + " health!");
-					Player.inventory.RemoveAt (input-1);
-				}
-				else if (Player.inventory [input - 1].ID >= 101 && Player.inventory [input - 1].ID <= 200) {
+					Console.WriteLine ("You have used the " + Player.inventory [input - 1].name + " to heal " + player1.salve.healingvalue + " health!");
+					Player.inventory.RemoveAt (input - 1);
+				} else if (Player.inventory [input - 1].ID >= 101 && Player.inventory [input - 1].ID <= 200) {
 					Console.Clear ();
 					Console.WriteLine (player1.armor.name + " has been replaced with " + World.ItemByID (Player.inventory [input - 1].ID).name + ".");
-					Player.inventory.Add(player1.armor);
+					Player.inventory.Add (player1.armor);
 					player1.armor = (Armor)World.ItemByID (Player.inventory [input - 1].ID);
 					Player.inventory.RemoveAt (input - 1);
+				} else if (Player.inventory [input - 1].ID >= 501 && Player.inventory [input - 1].ID <= 600) {
+					Console.Clear ();
+					Document document = (Document)World.ItemByID (Player.inventory [input - 1].ID);
+					Console.WriteLine (document.content);
+					Console.ReadLine ();
+					Console.Clear ();
 				}
 
 			}

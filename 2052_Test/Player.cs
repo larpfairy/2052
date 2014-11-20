@@ -6,6 +6,7 @@ namespace IntroCS
 	public class Player
 	{
 		public static List<Item> inventory { get; set; }
+		public static List<int> storylist { get; set; }
 		public int currentHealth { get; set; }
 		public int maximumHealth { get; set; }
 		public int experience { get; set;}
@@ -28,6 +29,7 @@ namespace IntroCS
 		public Player()
 		{
 			inventory = new List<Item>();
+			storylist = new List<int> ();
 			weapon = (Weapon)World.ItemByID (4);
 			armor = (Armor)World.ItemByID (104);
 			progress = 1;
@@ -117,6 +119,10 @@ namespace IntroCS
 				}
 			} else if (Player.inventory.Count < 1) {
 				Console.WriteLine ("empty");
+			}
+			Console.WriteLine ("storylist");
+			for (int i = 0; i < storylist.Count; i++) {
+				Console.WriteLine ("\t\t" + Player.storylist [i]);
 			}
 			Console.WriteLine ("Press enter to continue...");
 			Console.ReadLine ();

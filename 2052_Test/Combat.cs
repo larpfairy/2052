@@ -40,12 +40,17 @@ namespace IntroCS
 			int i = 0;
 			while (i == 0) {
 				if (playerinitiative > enemyinitiative) {
-					Combat.PlayerCombat (player1, enemy, combat);
-					x = Check (player1, enemy);
-					if (x == "TRUE") {
-						Enemy.Loot (player1, enemy);
-						Console.Clear ();
-						i++;
+					if (enemy.health > 0) {
+						Combat.PlayerCombat (player1, enemy, combat);
+					
+						x = Check (player1, enemy);
+						if (x == "TRUE") {
+							Enemy.Loot (player1, enemy);
+							enemy.health = enemy.maxhealth;
+							Console.Clear ();
+							i++;
+
+						}
 					}
 					if (enemy.health > 0) {
 						Combat.EnemyCombat (player1, enemy, combat);
@@ -54,6 +59,7 @@ namespace IntroCS
 							Combat.GameOver (player1);
 						} else if (x == "TRUE") {
 							Enemy.Loot (player1, enemy);
+							enemy.health = enemy.maxhealth;
 							Console.Clear ();
 							i++;
 						}
@@ -61,15 +67,18 @@ namespace IntroCS
 
 				} 
 				else if (enemyinitiative >= playerinitiative) {
-					Combat.EnemyCombat (player1, enemy, combat);
-					x = Combat.Check (player1, enemy);
-					if (x == "FALSE") {
-						Combat.GameOver (player1);
+					if (enemy.health > 0) {
+						Combat.EnemyCombat (player1, enemy, combat);
+						x = Combat.Check (player1, enemy);
+						if (x == "FALSE") {
+							Combat.GameOver (player1);
+						}
+						Combat.PlayerCombat (player1, enemy, combat);
 					}
-					Combat.PlayerCombat (player1, enemy, combat);
 					x = Combat.Check (player1, enemy);
 					if (x == "TRUE") {
 						Enemy.Loot (player1, enemy);
+						enemy.health = enemy.maxhealth;
 						Console.Clear ();
 						i++;
 					}
@@ -157,6 +166,7 @@ namespace IntroCS
 					combat.defendcounter++;
 					Console.ReadLine ();
 				} else if (input == "INVENTORY") {
+					Console.Clear ();
 					j++;
 					Inventory.DoInventory (player1);
 				} else {
@@ -185,7 +195,7 @@ namespace IntroCS
 			enemyd20 = random.Next (1, 21);
 			int enemyattack = enemyd20 + enemy.attackModifier;
 
-			if (enemy.weaponType == "STR") {
+			if (enemy.weaponType == "STR" || enemy.weaponType == "DEX") {
 				if (enemyattack >= player1.armor.armorClass + combat.defend) {
 					Console.WriteLine ("The " + enemy.name + " hits you with " + enemy.weaponName + "!");
 					int damage = random.Next (enemy.weaponMin, enemy.weaponMax + 1);

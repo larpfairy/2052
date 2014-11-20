@@ -44,8 +44,15 @@ namespace IntroCS
 			player1.progress = int.Parse (reader.ReadLine ());
 
 			int input;
-			while (!reader.EndOfStream) {
-				input = int.Parse(reader.ReadLine ());
+			string checkinput;
+			int i = 0;
+			while (i == 0) {
+				checkinput = reader.ReadLine ();
+				if (checkinput == "~") {
+					break;
+				}
+				input = int.Parse (checkinput);
+
 				if (input > 0 && input <= 100) {
 					//weapon
 					Player.inventory.Add((Weapon)World.ItemByID(input));
@@ -56,6 +63,11 @@ namespace IntroCS
 					//salve
 					Player.inventory.Add((Salve)World.ItemByID(input));
 				}
+			}
+			int storyinput;
+			while (!reader.EndOfStream) {
+				storyinput = int.Parse(reader.ReadLine ());
+				Player.storylist.Add (storyinput);
 			}
 
 			reader.Close ();

@@ -27,6 +27,11 @@ namespace IntroCS
 			for (int i = 0; i < Player.inventory.Count; i++) {
 				writer.WriteLine (Player.inventory [i].ID);
 			}
+			writer.WriteLine ("~");
+			for (int i = 0; i < Player.storylist.Count; i++) {
+				writer.WriteLine (Player.storylist [i]);
+			}
+
 			Console.WriteLine ("The game has been saved :)");
 
 			writer.Close ();

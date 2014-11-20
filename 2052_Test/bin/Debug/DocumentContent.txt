@@ -1,0 +1,6 @@
+singularity_document
+The singularity, as it is being called, 
+refers to a miraculous moment at which the first computer ai becomes self aware. 
+Many scientist have tried but failed to instigate this occurence and it remains a question of deep intrigue. 
+Will it be possible that one day robots will advance such that they act for themselves?
+~

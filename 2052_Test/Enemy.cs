@@ -7,6 +7,7 @@ namespace IntroCS
 	{
 		public int level { get; set; }
 		public int health { get; set; }
+		public int maxhealth { get; set; }
 		public string name { get; set; }
 		public int weaponMax { get; set; }
 		public int weaponMin{ get; set; }
@@ -20,11 +21,12 @@ namespace IntroCS
 		public int willPower { get; set; }
 		public int Value { get; set; }
 
-		public Enemy (int id, int Level, int Health, string Name, int attackmodifier, int weaponmax, int weaponmin, string weaponname, string weapontype, int armorclass, int willpower, int Initiative, int Experience, int value)
+		public Enemy (int id, int Level, int Health, int MaxHealth, string Name, int attackmodifier, int weaponmax, int weaponmin, string weaponname, string weapontype, int armorclass, int willpower, int Initiative, int Experience, int value)
 		{
 			ID = id;
 			level = Level;
 			health = Health;
+			maxhealth = MaxHealth;
 			name = Name;
 			attackModifier = attackmodifier;
 			weaponMax = weaponmax;

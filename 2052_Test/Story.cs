@@ -69,9 +69,9 @@ namespace IntroCS
 
 			string[] storyArray = GetStory (reader, "sequence2");
 
-			if (!Player.storylist.Contains (5)) {
+			if (!Player.storylist.Contains (26)) {
 				Console.WriteLine (storyArray [0]);
-			} else if (Player.storylist.Contains (5)) {
+			} else if (Player.storylist.Contains (26)) {
 				Console.WriteLine ("You are back in the circular computer room.");
 			}
 
@@ -86,12 +86,12 @@ namespace IntroCS
 				input = input.ToUpper ();
 				if (input == "GUARD") {
 					Console.Clear ();
-					if (!Player.storylist.Contains (2)) {
+					if (!Player.storylist.Contains (22)) {
 						Console.WriteLine (player1.name + "! I'm so glad you made it out of there, I was sure the stasis ward was lost entirely. If you made it this far, you might have a chance to get us out of this mess, well at least for a little bit. I'm going to need you to make your way to the utilities room and shut off the power, that should give us some time to regroup. It won't solve the problem permanently but it's worth a shot. Quickly! I'll hold them off while you search for the power grid.");
-						Player.storylist.Add (2);
+						Player.storylist.Add (22);
 						Console.ReadLine ();
 						Console.Clear ();
-					} else if (Player.storylist.Contains (2)) {
+					} else if (Player.storylist.Contains (22)) {
 						Console.WriteLine ("I'm not sure talking to me is the best use of your time...");
 						Console.ReadLine ();
 						Console.Clear ();
@@ -99,17 +99,17 @@ namespace IntroCS
 
 				} else if (input == "HALLWAY") {
 					Console.Clear ();
-					if (!Player.storylist.Contains (3)) {
+					if (!Player.storylist.Contains (23)) {
 						Console.WriteLine ("As you scurry down the hallway, dead bodies litter the floor, looking up from the carnage you realize that  3 mechs are running you down!");
 						Console.ReadLine ();
 						Combat.DoCombat (player1, (Enemy)World.EnemyByID (304));
 						Combat.DoCombat (player1, (Enemy)World.EnemyByID (304));
 						Combat.DoCombat (player1, (Enemy)World.EnemyByID (304));
-						Player.storylist.Add (3);
+						Player.storylist.Add (23);
 						Console.WriteLine ("After fighting off the mechs, you search for the utility room, but it doesn't appear to be in this part of the building. :(");
 						Console.ReadLine ();
 						Console.Clear ();
-					} else if (Player.storylist.Contains (3)) {
+					} else if (Player.storylist.Contains (23)) {
 						Console.WriteLine ("You walk down the hallway and find the remains of some slaughtered mechs. You find nothing else of value here.");
 						Console.ReadLine ();
 						Console.Clear ();
@@ -117,13 +117,13 @@ namespace IntroCS
 
 				} else if (input == "DOCUMENT") {
 					Console.Clear ();
-					if (!Player.storylist.Contains (4)) {
+					if (!Player.storylist.Contains (24)) {
 						Console.WriteLine ("You pick up the document...");
 						Player.inventory.Add ((Document)World.ItemByID (501));
-						Player.storylist.Add (4);
+						Player.storylist.Add (24);
 						Console.ReadLine ();
 						Console.Clear ();
-					} else if (Player.storylist.Contains (4)) {
+					} else if (Player.storylist.Contains (24)) {
 						Console.WriteLine ("You already picked that up...");
 						Console.ReadLine ();
 						Console.Clear ();
@@ -132,9 +132,9 @@ namespace IntroCS
 					Console.WriteLine ("You make your way past the door through a brief hallway and into another room.");
 					i++;
 					player1.progress++;
-					Player.storylist.Add(5);
+					Player.storylist.Add (26);
 					Save.SaveGame (player1);
-				} else if (input == "BACK") {
+				}else if (input == "BACK") {
 					player1.progress--;
 					Console.Clear ();
 					Story.Sequence1 (player1);

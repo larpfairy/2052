@@ -76,7 +76,7 @@ namespace IntroCS
 			int att = 0;
 			if (playerClass == "Scientist") {
 				if (attribute == "INT") {
-					att = random.Next (1, 7) + random.Next (1, 7) + random.Next (1, 7) + 4;
+					att = random.Next (1, 7) + random.Next (1, 7) + random.Next (1, 7) + 4;;
 				} else {
 					att = random.Next (1, 7) + random.Next (1, 7) + random.Next (1, 7);
 				}

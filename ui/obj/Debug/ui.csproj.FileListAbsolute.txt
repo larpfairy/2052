@@ -1,0 +1,4 @@
+C:\Users\michael\Documents\Projects\2052_Test\ui\bin\Debug\ui.dll
+C:\Users\michael\Documents\Projects\2052_Test\ui\bin\Debug\ui.pdb
+C:\Users\michael\Documents\Projects\2052_Test\ui\obj\Debug\ui.dll
+C:\Users\michael\Documents\Projects\2052_Test\ui\obj\Debug\ui.pdb

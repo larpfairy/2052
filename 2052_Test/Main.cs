@@ -6,6 +6,8 @@ namespace IntroCS
 	{
 		public static void Main()
 		{
+			Help.HelpTips ();
+
 			bool x = Load.WillLoad (); //determines if the user will load a game or not.
 
 			var player1 = new Player ();

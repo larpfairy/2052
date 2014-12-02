@@ -9,3 +9,13 @@ You make your way down the hallway towards a large circular room. Computers line
 ~
 There is a GUARD at one of the computers, there is a DOCUMENT on a desk, there is a HALLWAY to your left, there is a DOOR to your right.
 ~
+sequence3
+You open the door and continue down the hallway that sprawls out behind it. Eventually you find yourself in a within a room with access to different utilities.
+~
+There is a utility BOX on the wall, there is a CHEST in the corner.
+~
+sequence4
+You make your way down the hallway and stop in front of a locked stairwell, powered down mechs litter the floor. The guard unlocks the stairwell and as you begin to run up the stairs you can hear fighting coming from above you. As you climb higher the sounds of battle become more and more clear. Finally you push through the roof exit and are standing on top of the building.
+~
+There is a HELICOPTER on the roof, there is a DOCUMENT on the roof.
+~

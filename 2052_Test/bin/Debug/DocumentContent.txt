@@ -4,3 +4,7 @@ refers to a miraculous moment at which the first computer ai becomes self aware.
 Many scientist have tried but failed to instigate this occurence and it remains a question of deep intrigue. 
 Will it be possible that one day robots will advance such that they act for themselves?
 ~
+roof_document
+It is being said that nobody knows exactly where the singularity emerged initially, but some experts believe it may be traced to events that transpired 50 years ago. 
+They believe that Chernobyl could potentially be the source of this catastrophe. 
+~

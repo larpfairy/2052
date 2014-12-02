@@ -61,6 +61,8 @@ namespace IntroCS
 			Console.WriteLine ("You find " + enemy.Value + " credits on the " + enemy.name + ".");
 			player1.Value += enemy.Value;
 
+			Level.LevelUp (player1);
+
 			Console.WriteLine ("Press enter to continue...");
 			Console.ReadLine ();
 		}

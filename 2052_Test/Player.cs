@@ -120,10 +120,6 @@ namespace IntroCS
 			} else if (Player.inventory.Count < 1) {
 				Console.WriteLine ("empty");
 			}
-			Console.WriteLine ("storylist");
-			for (int i = 0; i < storylist.Count; i++) {
-				Console.WriteLine ("\t\t" + Player.storylist [i]);
-			}
 			Console.WriteLine ("Press enter to continue...");
 			Console.ReadLine ();
 			Console.Clear ();

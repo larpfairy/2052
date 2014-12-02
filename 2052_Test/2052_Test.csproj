@@ -49,6 +49,7 @@
     <Compile Include="Load.cs" />
     <Compile Include="Combat.cs" />
     <Compile Include="Document.cs" />
+    <Compile Include="Level.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -17,11 +17,11 @@ namespace IntroCS
 				player1.maximumHealth = Player.GetMaximumHealth (player1.playerClass);
 				player1.currentHealth = player1.maximumHealth;
 				player1.STR = Player.GetAttribute (player1.playerClass, "STR");
-				System.Threading.Thread.Sleep (5);
+				System.Threading.Thread.Sleep (1);
 				player1.DEX = Player.GetAttribute (player1.playerClass, "DEX");
-				System.Threading.Thread.Sleep (5);
+				System.Threading.Thread.Sleep (1);
 				player1.INT = Player.GetAttribute (player1.playerClass, "INT");
-				System.Threading.Thread.Sleep (5);
+				System.Threading.Thread.Sleep (1);
 				player1.CON = Player.GetAttribute (player1.playerClass, "CON");
 				player1.willpower = 10 + player1.INT / 4;
 				player1.level = 1;
@@ -47,6 +47,12 @@ namespace IntroCS
 			}
 			if (player1.progress == 2) {
 				Story.Sequence2 (player1);
+			}
+			if (player1.progress == 3) {
+				Story.Sequence3 (player1);
+			}
+			if (player1.progress == 4) {
+				return;
 			}
 
 

@@ -21,7 +21,7 @@ namespace IntroCS
 			while (i == 0) {
 				Console.WriteLine (storyArray[1]);
 				Console.WriteLine ("What would you like to do?");
-				Console.WriteLine ("INVENTORY || SAVE || STATUS");
+				Console.WriteLine ("INVENTORY || SAVE || STATUS || HELP");
 				input = Console.ReadLine ();
 				input = input.ToUpper ();
 				if (input == "CHEST") {
@@ -53,7 +53,10 @@ namespace IntroCS
 				} else if (input == "SAVE") {
 					Console.Clear ();
 					Save.SaveGame (player1);
-				} else if (input == "STATUS") {
+				} else if (input == "HELP") {
+					Console.Clear ();
+					Help.HelpTips ();
+				}else if (input == "STATUS") {
 					Console.Clear ();
 					Player.PlayerSummary (player1);
 				} else {
@@ -81,7 +84,7 @@ namespace IntroCS
 			while (i == 0) {
 				Console.WriteLine (storyArray[1]);
 				Console.WriteLine ("What would you like to do?");
-				Console.WriteLine ("INVENTORY || SAVE || STATUS || BACK");
+				Console.WriteLine ("INVENTORY || SAVE || STATUS || HELP || BACK");
 				input = Console.ReadLine ();
 				input = input.ToUpper ();
 				if (input == "GUARD") {
@@ -146,7 +149,7 @@ namespace IntroCS
 					Player.storylist.Add (26);
 					Save.SaveGame (player1);
 					Console.Clear ();
-				}else if (input == "BACK") {
+				} else if (input == "BACK") {
 					player1.progress--;
 					Console.Clear ();
 					Story.Sequence1 (player1);
@@ -156,7 +159,10 @@ namespace IntroCS
 				} else if (input == "SAVE") {
 					Console.Clear ();
 					Save.SaveGame (player1);
-				} else if (input == "STATUS") {
+				} else if (input == "HELP") {
+					Console.Clear ();
+					Help.HelpTips (); 
+				}else if (input == "STATUS") {
 					Console.Clear ();
 					Player.PlayerSummary (player1);
 				} else {
@@ -181,9 +187,9 @@ namespace IntroCS
 			int i = 0;
 			string input = "";
 			while (i == 0) {
-				Console.WriteLine (storyArray[1]);
+				Console.WriteLine (storyArray [1]);
 				Console.WriteLine ("What would you like to do?");
-				Console.WriteLine ("INVENTORY || SAVE || STATUS || BACK");
+				Console.WriteLine ("INVENTORY || SAVE || STATUS || HELP || BACK");
 				input = Console.ReadLine ();
 				input = input.ToUpper ();
 				if (input == "BOX") {
@@ -211,7 +217,10 @@ namespace IntroCS
 				} else if (input == "INVENTORY") {
 					Console.Clear ();
 					Inventory.DoInventory (player1);
-				} else if (input == "SAVE") {
+				} else if (input == "HELP") {
+					Console.Clear ();
+					Help.HelpTips ();
+				}else if (input == "SAVE") {
 					Console.Clear ();
 					Save.SaveGame (player1);
 				} else if (input == "STATUS") {
@@ -250,7 +259,7 @@ namespace IntroCS
 			while (i == 0) {
 				Console.WriteLine (storyArray[1]);
 				Console.WriteLine ("What would you like to do?");
-				Console.WriteLine ("INVENTORY || SAVE || STATUS || BACK");
+				Console.WriteLine ("INVENTORY || SAVE || STATUS || HELP || BACK");
 				input = Console.ReadLine ();
 				input = input.ToUpper ();
 				if (input == "HELICOPTER") {
@@ -271,14 +280,17 @@ namespace IntroCS
 						Console.ReadLine ();
 						Console.Clear ();
 					}
-				}else if (input == "BACK") {
+				} else if (input == "BACK") {
 					player1.progress--;
 					Console.Clear ();
 					Story.Sequence1 (player1);
 				} else if (input == "INVENTORY") {
 					Console.Clear ();
 					Inventory.DoInventory (player1);
-				} else if (input == "SAVE") {
+				} else if (input == "HELP") {
+					Console.Clear ();
+					Help.HelpTips ();
+				}else if (input == "SAVE") {
 					Console.Clear ();
 					Save.SaveGame (player1);
 				} else if (input == "STATUS") {

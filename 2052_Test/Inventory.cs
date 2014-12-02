@@ -23,6 +23,11 @@ namespace IntroCS
 						Salve salve;
 						salve = (Salve)World.ItemByID (item.ID);
 						Console.WriteLine ("\tHealing Power: " + salve.healingvalue);
+					} else if (item.ID > 100 && item.ID <= 200) {
+						Armor armor;
+						armor = (Armor)World.ItemByID (item.ID);
+						Console.WriteLine ("\tArmor: " + armor.armorClass);
+						Console.WriteLine ("\tType: " + armor.armorType);
 					}
 					Console.WriteLine ();
 					j++;

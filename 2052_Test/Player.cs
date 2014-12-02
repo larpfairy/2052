@@ -44,6 +44,12 @@ namespace IntroCS
 
 		public static string GetClass()
 		{
+			Console.WriteLine ("Class Selection");
+			Console.WriteLine ("Each class has a unique playstyle and uses different key abilities. Additionally, each class has differnt values for their defenses and attacks.");
+			Console.WriteLine ("A scientist uses intelligence to hit against an enemies willpower. Has a higher willpower but lower armor class. Has less health for more attack.");
+			Console.WriteLine ("A brawler uses strength to bash his foes to pieces. Has a higher armor class but lower willpower. Has more health for less attack.");
+			Console.WriteLine ("A sniper uses dexterity to shoot his foes with various guns. Has an average armor class and willpower, has average health and good attack.");
+
 			string[] classes = new string[3];
 			classes [0] = "Scientist";
 			classes [1] = "Brawler";

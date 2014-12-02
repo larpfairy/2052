@@ -6,7 +6,7 @@ namespace IntroCS
 	{
 		public static void Main()
 		{
-			bool x = Load.WillLoad ();
+			bool x = Load.WillLoad (); //determines if the user will load a game or not.
 
 			var player1 = new Player ();
 			if (x == false) {
@@ -17,11 +17,11 @@ namespace IntroCS
 				player1.maximumHealth = Player.GetMaximumHealth (player1.playerClass);
 				player1.currentHealth = player1.maximumHealth;
 				player1.STR = Player.GetAttribute (player1.playerClass, "STR");
-				System.Threading.Thread.Sleep (1);
+				System.Threading.Thread.Sleep (5);
 				player1.DEX = Player.GetAttribute (player1.playerClass, "DEX");
-				System.Threading.Thread.Sleep (1);
+				System.Threading.Thread.Sleep (5);
 				player1.INT = Player.GetAttribute (player1.playerClass, "INT");
-				System.Threading.Thread.Sleep (1);
+				System.Threading.Thread.Sleep (5);
 				player1.CON = Player.GetAttribute (player1.playerClass, "CON");
 				player1.willpower = 10 + player1.INT / 4;
 				player1.level = 1;
@@ -38,10 +38,11 @@ namespace IntroCS
 				Console.Clear ();
 			}
 
-			Player.PlayerSummary (player1);
+			Player.PlayerSummary (player1); //a brief summary of the characters stats.
 
-			Save.SaveGame (player1);
+			Save.SaveGame (player1); //saves the game. Writes to a .txt file named after the character.
 
+			//story elements are within if statements such that if a player continues a saved game, they can be directed back to the most recent room.
 			if (player1.progress <= 1) {
 				Story.Sequence1 (player1);
 			}

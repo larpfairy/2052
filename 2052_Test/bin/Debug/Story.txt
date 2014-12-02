@@ -1,6 +1,6 @@
 sequence1
 Initializing stasis defragmentation...
-Welcome back, you have been in stasis for some time. Please proceed to  
+Welcome back, you have been in stasis for some time. Please proceed with mandatory readjustment procedures. An attendent shoudld be with you shortly. 
 ~
 There is a CHEST in the corner, there is a DOOR to the North. You hear what sounds like fighting coming from beyond the door.
 ~

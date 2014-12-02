@@ -5,11 +5,12 @@ namespace IntroCS
 {
 	public static class World
 	{
+		//these lists are comprised of different items and are populated by the populate methods below.
 		public static List<Item> Items = new List<Item>();
 		public static List<Enemy> Enemies = new List<Enemy>();
 		public static List<Container> Containers = new List<Container> ();
 
-		//Container Lists
+		//Container Lists, each container has a list of items that it has inside it.
 		private static List<Item> scientist_chest_list = new List<Item> ();
 		private static List<Item> brawler_chest_list = new List<Item> ();
 		private static List<Item> sniper_chest_list = new List<Item> ();
@@ -51,7 +52,7 @@ namespace IntroCS
 		public const int computer_room_document = 501;
 		public const int roof_document = 502;
 
-		static World ()
+		static World () // constructor creates all objects and object lists.
 		{
 			PopulateItems ();
 			PopulateEnemies ();

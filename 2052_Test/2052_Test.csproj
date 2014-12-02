@@ -50,11 +50,12 @@
     <Compile Include="Combat.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="Help.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Downloads\loyolachicagocs_books-introcs-csharp-examples-c8b8ddb1cf17\loyolachicagocs_books-introcs-csharp-examples-c8b8ddb1cf17\ui\ui.csproj">
-      <Project>{DC88927E-04FA-4738-A07B-D5188AEAB924}</Project>
+    <ProjectReference Include="..\ui\ui.csproj">
+      <Project>{EC9F52A9-8038-4AA1-A786-696D91EDB54C}</Project>
       <Name>ui</Name>
     </ProjectReference>
   </ItemGroup>

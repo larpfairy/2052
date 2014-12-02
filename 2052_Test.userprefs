@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="2052_Test\Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="2052_Test\Combat.cs">
     <Files>
-      <File FileName="2052_Test\Main.cs" Line="4" Column="4" />
+      <File FileName="2052_Test\Combat.cs" Line="75" Column="75" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

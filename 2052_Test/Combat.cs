@@ -97,8 +97,7 @@ namespace IntroCS
 				Console.WriteLine ("ATTACK");
 				Console.WriteLine ("DEFEND");
 				Console.WriteLine ("INVENTORY");
-				Console.WriteLine ("AC" + player1.armor.armorClass);
-				Console.WriteLine ("AC and defend bonus: " + (player1.armor.armorClass + combat.defend));
+				Console.WriteLine ("AC" + (player1.armor.armorClass + combat.defend));
 				string input = UI.PromptLine ("What would you like to do?");
 				input = input.ToUpper ();
 
